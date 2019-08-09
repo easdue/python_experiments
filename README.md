@@ -6,5 +6,5 @@ I create while learning python
 use_c_dll and use_c_plus_plus_dll are experiments to play with the various ways
 of calling c/c++ code from python. I used Visual Studio Code and the mingw64 toolchain
 to compile the .dll's used. Extensions needed are:
-    * C/C++ by Microsoft
-    * CMakeTools by vector-of-bool
+* C/C++ by Microsoft
+* CMakeTools by vector-of-bool
