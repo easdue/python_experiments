@@ -8,3 +8,5 @@ of calling c/c++ code from python. I used Visual Studio Code and the mingw64 too
 to compile the .dll's used. Extensions needed are:
 * C/C++ by Microsoft
 * CMakeTools by vector-of-bool
+
+Note to self: ctypes, Cython ....
