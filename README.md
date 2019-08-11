@@ -10,3 +10,4 @@ to compile the .dll's used. Extensions needed are:
 * CMakeTools by vector-of-bool
 
 Note to self: ctypes, Cython ....
+TODO: Create script to re-create python virtual environment after initial checkout
