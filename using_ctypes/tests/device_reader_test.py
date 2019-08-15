@@ -1,5 +1,5 @@
 import unittest
-from ctypes import *
+from ctypes import c_char_p, cast
 from using_ctypes.device_reader.device_reader import DeviceReader
 
 

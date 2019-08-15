@@ -1,5 +1,5 @@
 """This module provides the DeviceReader class"""
-from ctypes import *
+from ctypes import cdll, c_char_p, c_int, c_void_p
 
 
 class DeviceReader:
@@ -15,7 +15,6 @@ class DeviceReader:
 
     class ResourceNotAllocated(Exception):
         """Exception thrown when trying to free a resource that was not previously allocated"""
-        pass
 
     def __init__(self):
         self.lib = cdll.LoadLibrary("../../device_reader_dll/build/libdevice_reader.dll")
