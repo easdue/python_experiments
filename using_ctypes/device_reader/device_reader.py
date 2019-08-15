@@ -42,7 +42,6 @@ class DeviceReader:
             The pointer to the byte array containing the value of the cell
         """
         self.allocated_resources.append(self.lib.get_cell(device, row, column))
-        print(f"allocated: {hex(self.allocated_resources[-1])}")
         return self.allocated_resources[-1]
 
     def free_resource(self, resource: c_void_p) -> None:
@@ -64,7 +63,6 @@ class DeviceReader:
             If the resource was not previously allocated
         """
         if resource in self.allocated_resources:
-            print(f"releasing: {hex(resource)}")
             self.allocated_resources.remove(resource)
             self.lib.free_resource(resource)
         else:
