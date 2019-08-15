@@ -4,6 +4,9 @@ project(device_reader VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 # Automatically download and compile googletest 
 # https://github.com/Crascit/DownloadProject/blob/master/CMakeLists.txt
 
@@ -28,7 +31,7 @@ add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 add_library(device_reader SHARED device_reader.c)
 add_definitions(-DBUILD_DLL)
 
-add_subdirectory(tests ${device_reader_BINARY_DIR})
+add_subdirectory(tests ${tests_BINARY_DIR})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})

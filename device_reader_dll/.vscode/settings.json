@@ -25,4 +25,6 @@
         "googleTests"
     ],
     "gtest-adapter.supportLocation": true
+
+    "cmake.generator": "Unix Makefiles"
 }
