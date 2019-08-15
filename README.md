@@ -9,5 +9,5 @@ to compile the .dll's used. Extensions needed are:
 * C/C++ by Microsoft
 * CMakeTools by vector-of-bool
 
-Note to self: ctypes, Cython ....
+Note to self: ctypes, Cython, CFFI, cppyy SWIG Boost.Python, pyrex ....
 TODO: Create script to re-create python virtual environment after initial checkout
