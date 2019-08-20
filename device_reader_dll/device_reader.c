@@ -5,8 +5,7 @@
 DLLEXPORT char* get_cell(const char* device, int row, int column)
 {
     char *result;
-    int size = snprintf(NULL, 0, "device[%d][%d]", row, column);
-
+    int size = snprintf(NULL, 0, "%s[%d][%d]", device, row, column);
     result = (char *) malloc((size + 1) * sizeof(char));
 
     if (sprintf(result, "%s[%d][%d]", device, row, column) < 0) {
