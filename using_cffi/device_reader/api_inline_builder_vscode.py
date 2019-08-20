@@ -16,7 +16,7 @@ ffibuilder.cdef("""
 ffibuilder.set_source("_device_reader_cffi_vscode",
 """
     #include "device_reader.h"
-""", libraries=['device_reader.dll'])
+""", libraries=['device_reader_vscode.dll'])
 
 if __name__ == "__main__":
     ffibuilder.compile(verbose=True)
