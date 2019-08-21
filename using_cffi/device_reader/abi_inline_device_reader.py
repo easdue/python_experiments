@@ -1,22 +1,14 @@
 import os
 
 from cffi import FFI
-from enum import Enum
+
+from cffi_device_reader import CffiDeviceReader
 
 
-class AbiInlineDeviceReader:
-    class ResourceNotAllocated(Exception):
-        """Exception thrown when trying to free a resource that was not previously allocated"""
+class AbiInlineDeviceReader(CffiDeviceReader):
+    def __init__(self, library: CffiDeviceReader.Library):
+        super().__init__()
 
-    class Library(Enum):
-        mingw64 = 1
-        vscode = 2
-
-        def get_library_name(self):
-            return {1: "./libdevice_reader_mingw64.dll",
-                    2: "./device_reader_vscode.dll"}[self.value]
-
-    def __init__(self, library: Library):
         self.ffi = FFI()
         self.ffi.cdef("""
             char* get_cell(char *device, int row, int column);
@@ -25,7 +17,6 @@ class AbiInlineDeviceReader:
 
         library_name = library.get_library_name()
         self.lib = self.ffi.dlopen(os.path.join(os.path.dirname(__file__), library_name))
-        self.allocated_resources = []
 
     def get_cell(self, device: bytes, row: int, col: int):
         """
