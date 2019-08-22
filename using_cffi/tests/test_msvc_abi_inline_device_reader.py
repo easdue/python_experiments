@@ -3,9 +3,9 @@ import unittest
 from abi_inline_device_reader import AbiInlineDeviceReader
 
 
-class VsCodeAbiInlineDeviceReaderTest(unittest.TestCase):
+class MsvcAbiInlineDeviceReaderTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.device_reader = AbiInlineDeviceReader(AbiInlineDeviceReader.Library.vscode)
+        self.device_reader = AbiInlineDeviceReader(AbiInlineDeviceReader.Library.msvc)
 
     def test_devicereader_returns_correct_values(self):
         result_ptr = self.device_reader.get_cell(b"Device1", 0, 0)

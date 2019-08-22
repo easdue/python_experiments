@@ -80,7 +80,3 @@ class AbiInlineDeviceReader(CffiDeviceReader):
         """
         return len(self.allocated_resources)
 
-
-#reader2 = AbiInlineDeviceReader(AbiInlineDeviceReader.Library.mingw64)
-#cell2 = reader2.get_cell(b"Device2", 1, 0)
-#print(f"reader2.cell: {reader2.to_string(cell2)}")

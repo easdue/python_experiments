@@ -3,9 +3,9 @@ import unittest
 from abi_inline_device_reader import AbiInlineDeviceReader
 
 
-class Mingw64AbiInlineDeviceReaderTest(unittest.TestCase):
+class MingwAbiInlineDeviceReaderTest(unittest.TestCase):
     def setUp(self) -> None:
-        self.device_reader = AbiInlineDeviceReader(AbiInlineDeviceReader.Library.mingw64)
+        self.device_reader = AbiInlineDeviceReader(AbiInlineDeviceReader.Library.mingw)
 
     def test_devicereader_returns_correct_values(self):
         result_ptr = self.device_reader.get_cell(b"Device1", 0, 0)
