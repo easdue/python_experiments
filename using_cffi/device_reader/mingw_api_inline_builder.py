@@ -13,10 +13,10 @@ ffibuilder.cdef("""
     void __cdecl free_resource(char* resource);
 """)
 
-ffibuilder.set_source("_device_reader_cffi_vscode",
+ffibuilder.set_source("_device_reader_mingw_cffi",
 """
     #include "device_reader.h"
-""", libraries=['device_reader_vscode.dll'])
+""", libraries=['../lib/libdevice_reader_mingw.dll'])
 
 if __name__ == "__main__":
     ffibuilder.compile(verbose=True)

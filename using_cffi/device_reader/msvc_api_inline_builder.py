@@ -1,7 +1,7 @@
 from cffi import FFI
 
 
-ffibuilder = FFI()\
+ffibuilder = FFI()
 
 """
  Can currently not parse preprocessor directives
@@ -13,10 +13,10 @@ ffibuilder.cdef("""
     void __cdecl free_resource(char* resource);
 """)
 
-ffibuilder.set_source("_device_reader_cffi_mingw64",
+ffibuilder.set_source("_device_reader_msvc_cffi",
 """
     #include "device_reader.h"
-""", libraries=['device_reader_vscode.dll'])
+""", libraries=['../lib/device_reader_msvc.dll'])
 
 if __name__ == "__main__":
     ffibuilder.compile(verbose=True)
