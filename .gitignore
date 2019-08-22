@@ -29,6 +29,7 @@ share/python-wheels/
 *.egg
 MANIFEST
 /using_cffi/device_reader/Release/
+/using_cffi/device_reader/*.c
 !/using_cffi/lib
 !/using_ctypes/lib
 
