@@ -17,7 +17,7 @@ class DeviceReader:
         """Exception thrown when trying to free a resource that was not previously allocated"""
 
     def __init__(self):
-        self.lib = cdll.LoadLibrary("../../device_reader_dll/build/libdevice_reader.dll")
+        self.lib = cdll.LoadLibrary("../lib/libdevice_reader_mingw.dll")
         self.lib.get_cell.argtypes = [c_char_p, c_int, c_int]
         self.lib.get_cell.restype = c_void_p
         self.lib.free_resource.argtypes = [c_void_p]

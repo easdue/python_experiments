@@ -4,6 +4,16 @@ project(device_reader VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
+set (LIB_POSTFIX "")
+
+if (WIN32)
+    if(MSVC)
+        set (LIB_POSTFIX "_msvc")
+    elseif(MINGW)
+        set (LIB_POSTFIX "_mingw")
+    endif()
+endif()
+
 set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
@@ -28,7 +38,7 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 add_subdirectory(${googletest_SOURCE_DIR} ${googletest_BINARY_DIR})
 
-add_library(device_reader SHARED device_reader.c)
+add_library(device_reader${LIB_POSTFIX} SHARED device_reader.c)
 add_definitions(-DBUILD_DLL)
 
 add_subdirectory(tests ${tests_BINARY_DIR})

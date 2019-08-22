@@ -10,8 +10,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
-build_vs/
+build-*/
 develop-eggs/
 dist/
 downloads/
@@ -30,6 +29,8 @@ share/python-wheels/
 *.egg
 MANIFEST
 /using_cffi/device_reader/Release/
+!/using_cffi/lib
+!/using_ctypes/lib
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
